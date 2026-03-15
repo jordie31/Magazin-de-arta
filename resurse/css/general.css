@@ -17,11 +17,11 @@ main{
     grid-template-areas: "welcome welcome welcome"
                          "promotii promotii produsedescumparate"
                          "anunturi anunturi anunturi"
-                         "fig1 contact contact"
-                         "fig2 contact contact"
-                         "fig3 contact contact"
+                         "fig1 contact_orar contact_orar"
+                         "fig2 contact_orar contact_orar"
+                         "fig3 contact_orar contact_orar"
                          "produse produse produse"
-                         "index-intrebari index-intrebari index-intrebari" ;
+                         "recomandari recomandari recomandari" ;
 }
 
 #grid-pagina > * /*sau section */ {
@@ -40,8 +40,8 @@ main{
 #produsedescumparate{
     grid-area: produsedescumparate;
 }
-#contact{
-    grid-area: contact;
+#contact_orar{
+    grid-area: contact_orar;
 }
  
 #fig1{
@@ -56,8 +56,8 @@ main{
 #produse{
     grid-area: produse;
 }
-#index-intrebari{
-    grid-area: index-intrebari;
+#recomandari{
+    grid-area: recomandari;
 }
 
 figure{
@@ -116,10 +116,10 @@ figure.fg-img > img{
     grid-template-columns: 2fr 2fr;
     grid-template-areas: "welcome welcome"
                          "promotii promotii"
-                         "fig2 contact"
-                         "fig3 contact"
+                         "fig2 contact_orar"
+                         "fig3 contact_orar"
                          "produse produse"
-                         "index-intrebari index-intrebari" ;
+                         "recomandari recomandari" ;
     }
 }
 
