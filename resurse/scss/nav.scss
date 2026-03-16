@@ -1,0 +1,98 @@
+nav a{
+    --latime-buton: 160px;
+    --inaltime-buton: 60px;
+}
+
+/* reset lista */
+ul.meniu, ul.meniu ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* hamburger ascuns momentan */
+#hamburger, #ch-menu{
+    display: none;
+}
+
+.text-icon, .imag-icon{
+    display: inline-block;
+}
+
+/* meniul principal */
+ul.meniu{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    gap: 10px;
+}
+
+/* butoanele principale */
+ul.meniu li{
+    cursor: pointer;
+    display: inline-block;
+    width: var(--latime-buton);
+    height: var(--inaltime-buton);
+    background-color: var(--culoare-fundal);
+    border: 2px solid var(--culoare-contur);
+    color: black;
+    text-align: center;
+    line-height: var(--inaltime-buton);
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* linkuri */
+ul.meniu li a{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+/* hover buton */
+ul.meniu>li:hover{
+    background-color: var(--culoare-contur);
+    color: white;
+}
+
+/* dropdown ascuns */
+ul.meniu ul{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    animation: animatie_subdomeniu 0.5s ease;
+}
+
+/* afisare dropdown */
+ul.meniu li:hover ul{
+    display: block;
+    z-index: 10;
+}
+
+/* elemente dropdown */
+ul.meniu ul li{
+    width: var(--latime-buton);
+    background-color: var(--culoare-fundal);
+}
+
+/* hover dropdown */
+ul.meniu ul li:hover{
+    background-color: var(--culoare-contur);
+    color: white;
+}
+
+/* animatie */
+@keyframes animatie_subdomeniu{
+    0%{
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}

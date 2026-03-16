@@ -1,0 +1,31 @@
+{
+  "name": "magazin_arta",
+  "version": "1.0.0",
+  "description": "magazin de materiale de arta online",
+  "keywords": [
+    "arta",
+    "vopsea",
+    "pensule",
+    "acuarele",
+    "materiale",
+    "arta"
+  ],
+  "homepage": "https://github.com/jordie31/Magazin-de-arta#readme",
+  "bugs": {
+    "url": "https://github.com/jordie31/Magazin-de-arta/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordie31/Magazin-de-arta.git"
+  },
+  "license": "ISC",
+  "author": "Iordache Irina",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

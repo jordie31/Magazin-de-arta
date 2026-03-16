@@ -1,57 +1,19 @@
 <!DOCTYPE html>
 <html lang="ro">
+
     <head>
-        <meta charset="utf-8">
-        <meta name="author" content="Irina Iordache">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ArtGround</title>
         <meta name="description" content="Magazin online de materiale pentru pictura, desen și hobby creativ.">
         <meta name="keywords" content="magazin arta, magazin desen, magazin pictura, desen, pictura, arta, vopsea, creioane, martiale desen, materiale pictura, art"> <!-- aici pui cuvintele care se repeta si prin site-->
-        <title>ArtGround</title>
-        <link rel="icon" type="image/png" href="/resurse/imagini/favicon/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/resurse/imagini/favicon/favicon.svg" />
-        <link rel="shortcut icon" href="/resurse/imagini/favicon/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/resurse/imagini/favicon/apple-touch-icon.png" />
-        <meta name="apple-mobile-web-app-title" content="MyWebSite" />
-        <link rel="manifest" href="/resurse/imagini/favicon/site.webmanifest" />
 
-        <link rel="stylesheet" href="/resurse/css/general.css" type="text/css" />
-        <link rel="stylesheet" href="/resurse/css/nav.css" type="text/css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+        <%- include ("../fragmente/head.ejs") %>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     </head>
 
 
     <body>
-        <header>
-            <h1 id="t".class="archivo-black-regular"> ArtGround <i class="fa-solid fa-palette"></i></h1>
-            <img src="/resurse/imagini/logo.png" alt="sigla" />
-
-            <nav>
-                <label id="hamburger" for="ch-menu"></label>
-                <input type="checkbox" id="ch-menu"/>
-                <ul class="meniu">
-                    
-                    <li>Home  <i class="fa-regular fa-star"></i>
-                        <ul>
-                            <li> <a href="#welcome">Welcome </a> </li>
-                           
-                            <li> <a href="#promotii">Promotii</a> </li>
-                                
-                            <li> <a href="#produsedescumparate">Produse des cumparate</a> </li>
-                           
-                        </ul>
-                    </li> 
-                    <li>Produse</li>  
-                    <li>Contact si orar</li>
-                    <li>Recomandari</li>
-                    <li>Cosul meu</li>
-                </ul>
-            </nav>
-        </header>
-
+        
+        <%- include ("../fragmente/header.ejs") %>
         <main> <!--  de aici in jos de modificat de la mine -->
             <div id="grid-pagina">
 
@@ -70,9 +32,9 @@
                         <picture>
                             <!-- il ia pe primul care se potriveste cu query-ul din media-->
                             <!-- faci mai multe versiuni de imagine ca in caz ca faci fereastra mai mica sa schimba pe urm poza mai zoomed in-->
-                            <source srcset="/resurse/imagini/gouache-mic.jpg" media="(max-width:700px)"/>
-                            <source srcset="/resurse/imagini/gouache-mediu.jpg" media="(max-width:1200px)"/>
-                            <img src="/resurse/imagini/gouache-mare.jpg" alt="text"/>
+                            <source srcset="./resurse/imagini/gouache-mic.jpg" media="(max-width:700px)"/>
+                            <source srcset="./resurse/imagini/gouache-mediu.jpg" media="(max-width:1200px)"/>
+                            <img src="./resurse/imagini/gouache-mare.jpg" alt="text"/>
                         </picture>
                     </div>
                 </div>
@@ -279,14 +241,7 @@
             </section>
         </main>
 
-        <footer id="subsol">
-        <a href="#" title="mergi sus" id="link-top"><div id="triunghi"></div></a>
-		<address>
-			Adresa: Strada Zambilelor, nr. 31, București, sector 6, România;
-            E-mail: <a href="mailto:artground@gmail.com">artground@gmail.com</a>;
-            Telefon: <a href="+40756555001">0756555001</a>;
-		</address>
-        </footer>
+        <%- include ("../fragmente/footer.ejs") %>
 
     </body>
 </html>
