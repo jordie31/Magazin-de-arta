@@ -65,14 +65,13 @@ footer {
 #contact_orar{
     grid-area: contact_orar;
 }
- 
+
 #fig1{
     grid-area: fig1;
 }
 #fig2{
     grid-area: fig2;
 }
-
 #produse{
     grid-area: produse;
 }
@@ -85,7 +84,6 @@ footer {
 figure{
     margin: 0;
 }
-
 figure.fg-img > img{
     width: 100%;
 }
@@ -154,6 +152,18 @@ iframe {
 
 #link-top:hover {
     background-color: var(--culoare-highlight);
+}
+
+#tab-orar tr:nth-child(even) {
+    background-color: var(--culoare-highlight);
+}
+
+#tab-orar tr:nth-child(odd) {
+    background-color: var(--culoare-butoane);
+}
+
+#tab-orar thead tr {
+    background-color: var(--culoare-contur);
 }
 
 #triunghi {
