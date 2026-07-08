@@ -1,0 +1,148 @@
+@media print {
+  @page:left {
+    margin-left: 3cm;
+    margin-right: 1cm;
+  }
+
+  @page:right {
+    margin-left: 1cm;
+    margin-right: 3cm;
+  }
+
+  @page {
+    margin-top: 2cm;
+    margin-bottom: 2cm;
+  }
+
+  img,
+  video,
+  iframe,
+  picture,
+  figure,
+  figcaption,
+  audio,
+  canvas,
+  object,
+  meter,
+  embed,
+  .container-iframe,
+  .taburi-iframe,
+  #link-top,
+  #hamburger,
+  #ch-menu,
+  .hamburger {
+    display: none !important;
+  }
+
+  #grid-pagina {
+    display: block !important;
+  }
+
+  /* evitare sectionare */
+  article, section, p, li, tr, .categorie {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    -webkit-column-break-inside: avoid !important;
+    -moz-column-break-inside: avoid !important;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+    border: none !important;
+  }
+
+  h1 {
+    text-align: center;
+    page-break-after: avoid;
+  }
+
+  nav ul.meniu {
+    display: block !important;
+    list-style: disc inside;
+    text-align: left;
+    page-break-after: always;
+  }
+
+  nav ul.meniu > li {
+    display: list-item !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 8px 0 !important;
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    transition: none !important;
+    text-align: left;
+    margin-left: 2em;
+  }
+
+  nav ul.meniu > li::before {
+    display: none !important;
+  }
+
+  nav ul.meniu > li i {
+    display: none !important;
+  }
+
+  nav ul.meniu > li .menu-text {
+    display: inline !important;
+    margin-left: 0 !important;
+  }
+
+  nav ul.meniu > li ul {
+    display: none !important;
+  }
+
+  nav ul.meniu > li:hover {
+    background: none !important;
+    color: inherit !important;
+  }
+
+  footer {
+    page-break-before: always;
+  }
+
+  #banner-print {
+    text-align: center;
+    border: 4px inset #000;
+    width: 70%;
+    margin: 20px auto;
+    padding: 15px;
+    page-break-before: avoid;
+  }
+
+  footer::after {
+    content: "Iordache\aIrina";
+    white-space: pre;
+    position: fixed;
+    bottom: 1cm;
+    right: 1cm;
+    width: 4cm;
+    height: 1cm;
+    border: 3px solid #000;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0.4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    font-size: 9px;
+    line-height: 1;
+    padding: 2px;
+    overflow: hidden;
+  }
+
+  .description-image,
+  [data-for-media],
+  .media-caption {
+    display: none !important;
+  }
+
+  i.fa-solid,
+  i.fa-regular {
+    display: none !important;
+  }
+}

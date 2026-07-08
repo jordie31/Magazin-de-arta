@@ -16,6 +16,7 @@
 
         <link rel="stylesheet" href="/resurse/css/general.css" type="text/css" />
         <link rel="stylesheet" href="/resurse/css/nav.css" type="text/css" />
+        <link rel="stylesheet" href="/resurse/css/print.css" type="text/css" media="print" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,24 +31,43 @@
             <img src="/resurse/imagini/logo.png" alt="sigla" />
 
             <nav>
+                <input type="checkbox" id="ch-menu" />
                 <label id="hamburger" for="ch-menu"></label>
-                <input type="checkbox" id="ch-menu"/>
                 <ul class="meniu">
                     
-                    <li>Home  <i class="fa-regular fa-star"></i>
+                    <li>
+                        <i class="fa-solid fa-home"></i>
+                        <span class="menu-text">Home</span>
                         <ul>
-                            <li> <a href="#welcome">Welcome </a> </li>
-                           
+                            <li> <a href="#welcome">Welcome</a> </li>
                             <li> <a href="#promotii">Promotii</a> </li>
-                                
-                           <li> <a href="#anunturi">Anunturi</a> </li>
-
+                            <li> <a href="#anunturi">Anunturi</a> </li>
                         </ul>
-                    </li> 
-                    <li>Produse</li>  
-                    <li>Contact si orar</li>
-                    <li>Recomandari</li>
-                    <li>Cosul meu</li>
+                    </li>
+                    <li class="menu-button">
+                        <a href="#utilizator">
+                            <i class="fa-solid fa-user"></i>
+                            <span class="menu-text">Utilizator</span>
+                        </a>
+                    </li>
+                    <li class="menu-button">
+                        <a href="#produse">
+                            <i class="fa-solid fa-cube"></i>
+                            <span class="menu-text">Produse</span>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span class="menu-text">Contact și orar</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-star"></i>
+                        <span class="menu-text">Recomandări</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-shopping-cart"></i>
+                        <span class="menu-text">Coșul meu</span>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -57,13 +77,10 @@
 
                 <section id="welcome"> <!-- fiecare id de section trb sa fie unic-->
                     <hgroup>
-                        <h2>Bine ati venit <i class="fa-solid fa-hand-peace"></i></h2>
-                        <p class="subtitlu">Despre noi</p>
+                        <h2>Bine ați venit <i class="fa-solid fa-hand-peace"></i></h2>
+                        <p class="subtitlu">Vă mulțumim că ne vizitați site-ul!</p>
                     </hgroup>
-
-                    <p class="intro">Vă mulțumim că ne vizitați site-ul. </p>
-                    
-                    <div class="intro-oferte"> <div>Sketchbook</div> <div>Creioane</div> <div>Vopsea</div> <div>Seturi carbune</div> </div>
+              
                     <p class="anunt intro">Aici puteti gasi orice material pentru a va face visele creative sa devina realitate!</p>
                     <div id="dv-prezentare-1">
                         <div id="dv-prezentare">
@@ -102,66 +119,23 @@
                     </article>
                 </section>
 
-                <section id="produse">
-                    <h2>Produse</h2>
-                    <p>Va rugam selectati activitatea pe care o faceti pentru a vizualiza produsele respective:</p>
+                <section id="utilizator">
+                    <h2>Utilizator</h2>
+                    <p>Bine ai venit în zona utilizatorului! Aici găsești informații utile despre cont, comenzi și preferințe.</p>
 
                     <section>
-                        <h3>Pictura</h3>
-
-                        <details><summary>Produse</summary>
-                        <p>- Vopsea</p>
-                        <ul>
-                            <li>in ulei</li>
-                            <li>gouache</li>
-                            <li>watercolor</li>
-                        </ul>
-                        <p>- Pensule</p>
-                        <p>- Panze</p>
-                        <p>- Sevalete</p>
-                        </details>
+                        <h3>Profil</h3>
+                        <p>Verifică datele tale de contact și preferințele de livrare.</p>
                     </section>
 
                     <section>
-                        <h3>Desen</h3>
-
-                        <details><summary>Produse</summary>
-                        <p>- Carioci</p>
-                        <ul>
-                            <li>watercolor</li>
-                            <li>normale</li>
-                            <li>grafice</li>
-                        </ul>
-                        <p>- Creioane</p>
-                        <p>- Sketchbooks</p>
-                        </details>
+                        <h3>Comenzi</h3>
+                        <p>Vezi istoricul comenzilor și statusul comenzilor tale în derulare.</p>
                     </section>
                     
                     <section>
-                        <h3>Grafica</h3>
-
-                        <details><summary>Produse</summary>
-                        <p>- Pixuri</p>
-                        <ul>
-                            <li>de contur</li>
-                        </ul>
-                        <p>- Caiete</p>
-                        <p>- Markere</p>
-                        </details>
-                    </section>
-
-                    <section>
-                        <h3>Caligrafie</h3>
-                        <details><summary>Produse</summary>
-                        <p>- Stilouri</p>
-                        <ul>
-                            <li>in ulei</li>
-                            <li>gouache</li>
-                            <li>watercolor</li>
-                        </ul>
-                        <p>- Planse</p>
-                        <p>- Cerneala</p>
-                        </details>
+                        <h3>Preferințe</h3>
+                        <p>Salvează produsele preferate și vezi sugestii personalizate.</p>
                     </section>
 
                 </section>
@@ -240,11 +214,70 @@
                     <img src="resurse/imagini/pasteluri.jpg" alt="Pastel">
                     <figcaption>Pasteluri</figcaption>
                 </figure>
-                <figure id="fig2" class="fg-img">
-                <img src="resurse/imagini/watercolor.jpg" alt="Watercolor">
-                <figcaption>Acuarele</figcaption>
-                </figure>
-            
+                <section id="produse">
+                    <h2>Produse</h2>
+                    <p>Va rugam selectati activitatea pe care o faceti pentru a vizualiza produsele respective:</p>
+
+                    <section>
+                        <h3>Pictura</h3>
+
+                        <details><summary>Produse</summary>
+                        <p>- Vopsea</p>
+                        <ul>
+                            <li>in ulei</li>
+                            <li>gouache</li>
+                            <li>watercolor</li>
+                        </ul>
+                        <p>- Pensule</p>
+                        <p>- Panze</p>
+                        <p>- Sevalete</p>
+                        </details>
+                    </section>
+
+                    <section>
+                        <h3>Desen</h3>
+
+                        <details><summary>Produse</summary>
+                        <p>- Carioci</p>
+                        <ul>
+                            <li>watercolor</li>
+                            <li>normale</li>
+                            <li>grafice</li>
+                        </ul>
+                        <p>- Creioane</p>
+                        <p>- Sketchbooks</p>
+                        </details>
+                    </section>
+                    
+                    <section>
+                        <h3>Grafica</h3>
+
+                        <details><summary>Produse</summary>
+                        <p>- Pixuri</p>
+                        <ul>
+                            <li>de contur</li>
+                        </ul>
+                        <p>- Caiete</p>
+                        <p>- Markere</p>
+                        </details>
+                    </section>
+
+                    <section>
+                        <h3>Caligrafie</h3>
+                        <details><summary>Produse</summary>
+                        <p>- Stilouri</p>
+                        <ul>
+                            <li>in ulei</li>
+                            <li>gouache</li>
+                            <li>watercolor</li>
+                        </ul>
+                        <p>- Planse</p>
+                        <p>- Cerneala</p>
+                        </details>
+                    </section>
+
+                </section>
+
                 <section id="anunturi">
                     <h2 class="fg-img">Anunțuri</h2>
                     <ul>
@@ -279,12 +312,13 @@
         </main>
 
         <footer id="subsol">
-        <a href="#" title="mergi sus" id="link-top"><div id="triunghi"><div id="triunghi">&#5123;</div></a>
+        <a href="#" title="Mergi sus" id="link-top"><div id="triunghi">&#9650;</div></a>
 		<address>
 			Adresa: Strada Zambilelor, nr. 31, București, sector 6, România;
             E-mail: <a href="mailto:artground@gmail.com">artground@gmail.com</a>;
             Telefon: <a href="+40756555001">0756555001</a>;
 		</address>
+        <p id="banner-print"> Acesta este un proiect școlar!</p>
         </footer>
 
     </body>

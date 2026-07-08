@@ -1,131 +1,291 @@
-nav a{
-    --latime-buton: 180px;
-    --inaltime-buton: 200px;
-    background-color: var(--culoare-highlight);
+nav {
+  position: relative;
 }
 
-ul.meniu, ul.meniu ul{
-    list-style-type: none;
-    padding: 0;
+ul.meniu, ul.meniu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-#hamburger, #ch-menu{
+/*iconita de hamburger */
+#hamburger {
+  display: none;
+  position: absolute;
+  top: -23px;
+  right: 18px;
+  width: 30px;
+  height: 22px;
+  background-color: var(--culoare-border);
+  cursor: pointer;
+  z-index: 20;
+}
+
+#hamburger::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  border-radius: 10px;
+  transform: translateY(-50%);
+  box-shadow: 0 -8px 0 white, 0 8px 0 white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#hamburger::after {
+  display: none;
+}
+
+#ch-menu {
+  display: none;
+}
+
+.text-icon, .imag-icon, .menu-text {
+  display: inline-block;
+}
+
+ul.meniu {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  gap: 10px;
+}
+ul.meniu > li {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  width: 160px;
+  height: 60px;
+  background-color: var(--culoare-butoane);
+  border: 2px solid var(--culoare-contur);
+  color: var(--culoare-text);
+  text-align: center;
+  line-height: 60px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.4s ease-in-out;
+}
+ul.meniu > li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+ul.meniu > li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--culoare-highlight);
+  border-radius: 8px;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s ease-in-out;
+  z-index: -1;
+}
+ul.meniu > li:hover {
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+ul.meniu > li:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+ul.meniu > li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--culoare-butoane);
+  border: 2px solid var(--culoare-contur);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  margin-top: -2px;
+  transform-origin: 0 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0, 0);
+  transition: all 0.5s ease-in-out;
+}
+ul.meniu > li ul li {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 12px 0;
+  background-color: inherit;
+  border: none;
+  color: var(--culoare-text);
+  line-height: 1.5;
+  text-align: center;
+  font-size: 16px;
+  border-bottom: 1px solid var(--culoare-contur);
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}
+ul.meniu > li ul li:last-child {
+  border-bottom: none;
+}
+ul.meniu > li ul li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+ul.meniu > li ul li:hover {
+  background-color: var(--culoare-highlight);
+  color: white;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.4), 1px -1px 1px rgba(0, 0, 0, 0.4), -1px 1px 1px rgba(0, 0, 0, 0.4), 1px 1px 1px rgba(0, 0, 0, 0.4), 0 0 3px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+ul.meniu > li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1, 1);
+}
+
+@keyframes animatie-submeniu-deschidere {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+#ch-menu:checked + #hamburger {
+  background-color: transparent;
+}
+
+#ch-menu:checked + #hamburger::before {
+  transform: translateY(-50%) rotate(45deg);
+  box-shadow: none;
+}
+
+#ch-menu:checked + #hamburger::after {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 1000px) {
+  ul.meniu {
+    gap: 8px;
+  }
+  ul.meniu > li {
+    width: 130px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 0;
+  }
+  ul.meniu > li i {
+    font-size: 1.25rem;
+  }
+  ul.meniu > li .menu-text {
     display: none;
+  }
 }
 
-.text-icon, .imag-icon{
-    display: inline-block;
-}
-
-/* meniul principal */
-ul.meniu{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    gap: 1px;
-    width: 100%;
-    margin: 0;
-    padding-left: var(--margine-pagina);
-    padding-right: var(--margine-pagina);
-
-    box-sizing: border-box;
-}
-
-/* idk ce face */
-ul.meniu  ul{
-    display: none;
-    animation: animatie_submeniu 1s linear;
-    transform-origin: center top;
-    margin: 0;
-}
-
-ul.meniu li:hover ul{
+/* ecran mic meniu */
+@media (max-width: 700px) {
+  #hamburger {
     display: block;
-    z-index: 10;
-}
-
-
-/* butoanele principale */
-ul.meniu li{
-    cursor: pointer;
-    /* display: inline-block; */
-    width: var(--latime-buton);
-    height: var(--inaltime-buton);
-    background-color: var(--culoare-butoane);
-    border: 2px solid var(--culoare-contur);
-    color: var(--culoare-contur);
-    text-align: center;
-    line-height: var(--inaltime-buton);
-    margin-right: 10px;
-
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: all 0.5s ease;
-    position: relative; 
-
-    flex: 1;           /* fiecare buton ia spațiu egal */
-    width: auto;       /* suprascrie --latime-buton */
-    margin-right: 10;   /* elimini spațiul dintre butoane */
-}
-
-ul.meniu a{
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-/* poti sa dai click pe tot butonul */
-ul.meniu li a{
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    height: 100%;
-}
-
-/* hover buton */
-ul.meniu>li:hover{
-    background-color: var(--culoare-highlight);
-    color: white;
-}
-
-/* dropdown ascuns */
-ul.meniu ul{
-    display: none;
+    left: 1rem;
+    right: auto;
+  }
+  ul.meniu {
     position: absolute;
     top: 100%;
-    left: 0;
-    animation: animatie_subdomeniu 0.5s ease;
-}
+    left: 50%;
+    width: 80vw;
+    transform: translateX(-65%);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 16px;
+    background-color: var(--culoare-umplu);
+    border: 2px solid var(--culoare-umplu);
+    border-radius: 8px;
+    clip-path: polygon(20px 0, 20px 0, 20px 0, 20px 0, 20px 0);
+    pointer-events: none;
+    transition: clip-path 0.35s ease-in-out, transform 0.35s ease-in-out;
+    z-index: 18;
+  }
 
-/* afisare dropdown */
-
-
-/* elemente dropdown */
-ul.meniu ul li{
-    width: var(--latime-buton);
-    background-color: var(--culoare-fundal);
-}
-
-/* hover dropdown */
-ul.meniu ul li:hover{
-    background-color: var(--culoare-contur);
-    color: white;
-}
-
-/* animatie */
-@keyframes animatie_subdomeniu{
-    0%{
-        opacity: 0;
-        transform: scale(0,0);
-    }
-    50%{
-        transform: scale(0.7,1);
-    }
-    100%{
-        opacity: 1;
-        transform: scale(1,1);
-    }
+  #ch-menu:checked ~ ul.meniu {
+    clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%);
+    transform: translateX(-50%);
+    pointer-events: auto;
+  }
+  ul.meniu > li {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 12px 10px;
+    line-height: 1.4;
+    font-size: 16px;
+    text-align: center;
+    color: var(--culoare-text);
+    background-color: var(--culoare-butoane);
+    border: none;
+    border-bottom: 1px solid var(--culoare-border);
+  }
+  ul.meniu > li::before {
+    display: none;
+  }
+  ul.meniu i {
+    display: none;
+    font-size: 1.35rem;
+  }
+  ul.meniu > li:first-child i {
+    display: inline-block;
+  }
+  ul.meniu > li .menu-text {
+    display: inline-block;
+    margin-left: 0.55rem;
+    vertical-align: middle;
+    font-size: 1rem;
+  }
+  ul.meniu > li:first-child .menu-text {
+    display: none;
+  }
+  ul.meniu > li ul {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    background-color: var(--culoare-butoane);
+    border: 2px solid var(--culoare-contur);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    box-shadow: none;
+    z-index: 10;
+    margin-top: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: scaleY(0);
+    transform-origin: top;
+    clip-path: polygon(0 12px, 12px 0, 100% 0, 100% 100%, 0 100%);
+    transition: all 0.5s ease-in-out;
+  }
+  ul.meniu > li:hover ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+  }
+  ul.meniu > li ul li {
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 16px;
+  }
 }

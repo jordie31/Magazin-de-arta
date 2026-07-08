@@ -19,22 +19,20 @@
 
                 <section id="welcome"> <!-- fiecare id de section trb sa fie unic-->
                     <hgroup>
-                        <h2>Bine ati venit</h2>
-                        <p class="subtitlu">Despre noi</p>
+                        <h2>Bine ati venit <i class="fa-solid fa-hand-peace"></i></h2>
+                        <p class="subtitlu">Vă mulțumim că ne vizitați site-ul.</p>
                     </hgroup>
+                    <buuton class="btn btn-primary"></buuton> <!--idk de la lab 6-->
 
-                    <p class="intro">Vă mulțumim că ne vizitați site-ul.</p>
-                    
-                    <div class="intro-oferte"> <div>Sketchbook</div> <div>Creioane</div> <div>Vopsea</div> <div>Seturi carbune</div> </div>
-                    <p class="anunt intro">TESTETESTETESTETSAici puteti gasi orice material pentru a va face visele creative sa devina realitate!</p>
+                    <p class="anunt intro">Aici puteti gasi orice material pentru a va face visele creative sa devina realitate!</p>
                     <div id="dv-prezentare-1">
                         <div id="dv-prezentare">
                         <picture>
                             <!-- il ia pe primul care se potriveste cu query-ul din media-->
                             <!-- faci mai multe versiuni de imagine ca in caz ca faci fereastra mai mica sa schimba pe urm poza mai zoomed in-->
-                            <source srcset="./resurse/imagini/gouache-mic.jpg" media="(max-width:700px)"/>
-                            <source srcset="./resurse/imagini/gouache-mediu.jpg" media="(max-width:1200px)"/>
-                            <img src="./resurse/imagini/gouache-mare.jpg" alt="text"/>
+                            <source srcset="/resurse/imagini/gouache-mic.jpg" media="(max-width:700px)"/>
+                            <source srcset="/resurse/imagini/gouache-mediu.jpg" media="(max-width:1200px)"/>
+                            <img src="/resurse/imagini/gouache-mare.jpg" alt="text"/>
                         </picture>
                     </div>
                 </div>
@@ -62,66 +60,23 @@
                     </article>
                 </section>
 
-                <section id="produse">
-                    <h2>Produse</h2>
-                    <p>Va rugam selectati activitatea pe care o faceti pentru a vizualiza produsele respective:</p>
+                <section id="utilizator">
+                    <h2>Utilizator</h2>
+                    <p>Bine ai venit în zona utilizatorului! Aici găsești informații utile despre cont, comenzi și preferințe.</p>
 
                     <section>
-                        <h3>Pictura</h3>
-
-                        <details><summary>Produse</summary>
-                        <p>- Vopsea</p>
-                        <ul>
-                            <li>in ulei</li>
-                            <li>gouache</li>
-                            <li>watercolor</li>
-                        </ul>
-                        <p>- Pensule</p>
-                        <p>- Panze</p>
-                        <p>- Sevalete</p>
-                        </details>
+                        <h3>Profil</h3>
+                        <p>Verifică datele tale de contact și preferințele de livrare.</p>
                     </section>
 
                     <section>
-                        <h3>Desen</h3>
-
-                        <details><summary>Produse</summary>
-                        <p>- Carioci</p>
-                        <ul>
-                            <li>watercolor</li>
-                            <li>normale</li>
-                            <li>grafice</li>
-                        </ul>
-                        <p>- Creioane</p>
-                        <p>- Sketchbooks</p>
-                        </details>
+                        <h3>Comenzi</h3>
+                        <p>Vezi istoricul comenzilor și statusul comenzilor tale în derulare.</p>
                     </section>
                     
                     <section>
-                        <h3>Grafica</h3>
-
-                        <details><summary>Produse</summary>
-                        <p>- Pixuri</p>
-                        <ul>
-                            <li>de contur</li>
-                        </ul>
-                        <p>- Caiete</p>
-                        <p>- Markere</p>
-                        </details>
-                    </section>
-
-                    <section>
-                        <h3>Caligrafie</h3>
-                        <details><summary>Produse</summary>
-                        <p>- Stilouri</p>
-                        <ul>
-                            <li>in ulei</li>
-                            <li>gouache</li>
-                            <li>watercolor</li>
-                        </ul>
-                        <p>- Planse</p>
-                        <p>- Cerneala</p>
-                        </details>
+                        <h3>Preferințe</h3>
+                        <p>Salvează produsele preferate și vezi sugestii personalizate.</p>
                     </section>
 
                 </section>
@@ -198,18 +153,73 @@
                 </section>
 
                 <figure id="fig1" class="fg-img">
-                    <img src="resurse/imagini/pasteluri.jpg" alt="Pastel">
+                    <img src="/resurse/imagini/pasteluri.jpg" alt="Pastel">
                     <figcaption>Pasteluri</figcaption>
                 </figure>
-                <figure id="fig2" class="fg-img">
-                <img src="resurse/imagini/watercolor.jpg" alt="Watercolor">
-                <figcaption>Acuarele</figcaption>
-                </figure>
-                <figure  id="fig3" class="fg-img">
-                <img src="resurse/imagini/creioane.jpg" alt="Creioane">
-                <figcaption>Creioane colorate</figcaption>
-                </figure>
-            
+                <section id="produse">
+                    <h2>Produse</h2>
+                    <p>Va rugam selectati activitatea pe care o faceti pentru a vizualiza produsele respective:</p>
+
+                    <section>
+                        <h3>Pictura</h3>
+
+                        <details><summary>Produse</summary>
+                        <p>- Vopsea</p>
+                        <ul>
+                            <li>in ulei</li>
+                            <li>gouache</li>
+                            <li>watercolor</li>
+                        </ul>
+                        <p>- Pensule</p>
+                        <p>- Panze</p>
+                        <p>- Sevalete</p>
+                        </details>
+                    </section>
+
+                    <section>
+                        <h3>Desen</h3>
+
+                        <details><summary>Produse</summary>
+                        <p>- Carioci</p>
+                        <ul>
+                            <li>watercolor</li>
+                            <li>normale</li>
+                            <li>grafice</li>
+                        </ul>
+                        <p>- Creioane</p>
+                        <p>- Sketchbooks</p>
+                        </details>
+                    </section>
+                    
+                    <section>
+                        <h3>Grafica</h3>
+
+                        <details><summary>Produse</summary>
+                        <p>- Pixuri</p>
+                        <ul>
+                            <li>de contur</li>
+                        </ul>
+                        <p>- Caiete</p>
+                        <p>- Markere</p>
+                        </details>
+                    </section>
+
+                    <section>
+                        <h3>Caligrafie</h3>
+                        <details><summary>Produse</summary>
+                        <p>- Stilouri</p>
+                        <ul>
+                            <li>in ulei</li>
+                            <li>gouache</li>
+                            <li>watercolor</li>
+                        </ul>
+                        <p>- Planse</p>
+                        <p>- Cerneala</p>
+                        </details>
+                    </section>
+
+                </section>
+
                 <section id="anunturi">
                     <h2 class="fg-img">Anunțuri</h2>
                     <p><time datetime="2026-03-08">8 martie 2026:</time> Oferta speciala pentru toate fetele! Discount <strong>50%</strong> pentru toata gama de vopsea!</p>
@@ -222,7 +232,7 @@
                     <h2>Recomandări</h2>
                     <p>Set markere Posca multicolore - 16 bucati - <i>350 lei</i></p>
                      <figure>
-                    <img src="resurse/imagini/posca.jpeg" alt="Markere" width="500" height="600">
+                    <img src="/resurse/imagini/posca.jpeg" alt="Markere" width="500" height="600">
                      <figcaption>Posca</figcaption>
                     </figure>
                 </section>
