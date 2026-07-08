@@ -22,11 +22,11 @@ ul.meniu, ul.meniu ul {
 #hamburger {
     display: none;
     position: absolute;
-    top: 16px;
+    top: -23px;
     right: 18px;
     width: 30px;
     height: 22px;
-    background-color: transparent;
+    background-color: var(--culoare-border);
     cursor: pointer;
     z-index: 20;
 }
@@ -38,10 +38,10 @@ ul.meniu, ul.meniu ul {
     top: 50%;
     width: 100%;
     height: 4px;
-    background-color: var(--culoare-text);
-    border-radius: 3px;
+    background-color: white;
+    border-radius: 10px;
     transform: translateY(-50%);
-    box-shadow: 0 -8px 0 var(--culoare-text), 0 8px 0 var(--culoare-text);
+    box-shadow: 0 -8px 0 white, 0 8px 0 white;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -207,14 +207,6 @@ ul.meniu {
     transform: translateY(-9px) rotate(-45deg);
 }
 
-#ch-menu:checked ~ .meniu {
-    transform: scaleY(1);
-    opacity: 1;
-    visibility: visible;
-    max-height: 1200px;
-    overflow: visible;
-}
-
 @media (max-width: 1000px) {
     ul.meniu {
         gap: 8px;
@@ -236,7 +228,7 @@ ul.meniu {
     }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 700px) {
     #hamburger {
         display: block;
         left: 1rem;
@@ -246,37 +238,53 @@ ul.meniu {
     ul.meniu {
         position: absolute;
         top: 100%;
-        left: 1rem;
-        right: auto;
-        width: min(280px, calc(100% - 2rem));
+        left: 50%;
+        width: 80vw;
+        transform: translateX(-65%);
         flex-direction: column;
         align-items: stretch;
         gap: 10px;
         padding: 16px;
-        background-color: var(--culoare-fundal);
-        border: 2px solid var(--culoare-contur);
-        border-radius: 12px;
-        transform: scaleY(0);
-        transform-origin: top;
-        opacity: 0;
-        visibility: hidden;
-        max-height: 0;
-        overflow: hidden;
-        transition: transform 0.25s ease, opacity 0.25s ease, max-height 0.25s ease;
+        background-color: var(--culoare-umplu);
+        border: 2px solid var(--culoare-umplu);
+        border-radius: 8px;
+        clip-path: polygon(20px 0, 20px 0, 20px 0, 20px 0, 20px 0);
+        pointer-events: none;
+        transition: clip-path 0.35s ease-in-out, transform 0.35s ease-in-out;
         z-index: 18;
     }
 
+    #ch-menu:checked ~ ul.meniu {
+        clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%);
+        transform: translateX(-50%);
+        pointer-events: auto;
+    }
+
     ul.meniu > li {
+        display: block;
         width: 100%;
         height: auto;
         padding: 12px 10px;
         line-height: 1.4;
         font-size: 16px;
-        text-align: left;
+        text-align: center;
+        color: var(--culoare-text);
+        background-color: var(--culoare-butoane);
+        border: none;
+        border-bottom: 1px solid var(--culoare-border);
     }
 
-    ul.meniu > li i {
+    ul.meniu > li::before {
+        display: none;
+    }
+
+    ul.meniu i {
+        display: none;
         font-size: 1.35rem;
+    }
+
+    ul.meniu > li:first-child i {
+        display: inline-block;
     }
 
     ul.meniu > li .menu-text {
@@ -284,6 +292,10 @@ ul.meniu {
         margin-left: 0.55rem;
         vertical-align: middle;
         font-size: 1rem;
+    }
+
+    ul.meniu > li:first-child .menu-text {
+        display: none;
     }
 
     ul.meniu > li ul {

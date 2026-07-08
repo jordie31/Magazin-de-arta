@@ -29,7 +29,7 @@ for (let numeFolder of vect_foldere){
     }
 }
 
-// orice cerere catre un fisier .ejs -> 400 Bad Request
+// 400 Bad Request
 app.use(function(req, res, next){
     if (path.extname(req.path).toLowerCase() === ".ejs"){
         return afisareEroare(res, 400);
@@ -37,7 +37,7 @@ app.use(function(req, res, next){
     next();
 });
 
-// cerere catre un folder din /resurse fara fisier specificat -> 403 Forbidden
+//  403 Forbidden
 app.use("/resurse", function(req, res, next){
     let calePeDisc = path.join(obGlobal.folderResurse, req.path);
     if (fs.existsSync(calePeDisc) && fs.statSync(calePeDisc).isDirectory()){
@@ -46,7 +46,7 @@ app.use("/resurse", function(req, res, next){
     next();
 });
 
-app.use("/resurse",express.static(path.join(__dirname, "resurse")));
+app.use("/resurse",express.static(path.join(__dirname, "resurse"))); /*toate caile care incep cu resurse */
 
 app.get("/favicon.ico", function(req, res){
     res.sendFile(path.join(__dirname, "resurse/imagini/favicon/favicon.ico"));

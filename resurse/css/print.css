@@ -14,6 +14,7 @@
     margin-bottom: 2cm;
   }
 
+  /* ascunde tot ce nu trebuie */
   img,
   video,
   iframe,
@@ -30,7 +31,12 @@
   #link-top,
   #hamburger,
   #ch-menu,
-  .hamburger {
+  .hamburger 
+  .description-image,
+  [data-for-media],
+  .media-caption 
+  i.fa-solid,
+  i.fa-regular {
     display: none !important;
   }
 
@@ -103,6 +109,7 @@
     page-break-before: always;
   }
 
+   /*banner ul */
   #banner-print {
     text-align: center;
     border: 4px inset #000;
@@ -112,6 +119,7 @@
     page-break-before: avoid;
   }
 
+  /* watermark */
   footer::after {
     content: "Iordache\aIrina";
     white-space: pre;
@@ -133,16 +141,5 @@
     line-height: 1;
     padding: 2px;
     overflow: hidden;
-  }
-
-  .description-image,
-  [data-for-media],
-  .media-caption {
-    display: none !important;
-  }
-
-  i.fa-solid,
-  i.fa-regular {
-    display: none !important;
   }
 }

@@ -92,6 +92,7 @@ footer {
 }
 #contact_orar{
     grid-area: contact_orar;
+    min-width: 0;
 }
 #fig1{
     grid-area: fig1;
@@ -108,6 +109,7 @@ footer {
 #anunturi {
     grid-area: anunturi;
 }
+
 figure{
     margin: 0;
 }
@@ -125,6 +127,7 @@ img, video, iframe {
     height: auto;
 }
 
+/* alt font */
 .archivo-black-regular {
   font-family: "Archivo Black", sans-serif;
   font-weight: 400;
@@ -209,16 +212,46 @@ iframe {
     font-size: 17px;
 }
 
-#tab-orar tr:nth-child(even) {
-    background-color: var(--culoare-highlight);
+/* container cu scroll orizontal pt tabelul de orar, pe ecran mic/mediu */
+.tabel-scroll {
+    width: 100%;
 }
 
-#tab-orar tr:nth-child(odd) {
-    background-color: var(--culoare-butoane);
+#tab-orar {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+#tab-orar td, #tab-orar th {
+    background-color: transparent;
+    border: 1px solid var(--culoare-contur);
+    font-size: 1rem;
+    transition: background-color 0.75s ease, font-size 0.75s ease;
+}
+
+#tab-orar thead th {
+    border-width: 3px;
 }
 
 #tab-orar thead tr {
     background-color: var(--culoare-contur);
+}
+
+#tab-orar tbody tr:nth-child(even) {
+    box-shadow: inset 0 0 0 1000px var(--culoare-butoane);
+    color: var(--culoare-contur);
+}
+
+#tab-orar tbody tr:nth-child(odd) {
+    box-shadow: inset 0 0 0 1000px var(--culoare-highlight);
+    color: white;
+}
+
+#tab-orar tbody tr:hover td,
+#tab-orar tbody tr:hover th {
+    background-color: var(--culoare-fundal);
+    font-size: 1.2rem;
 }
 
 
@@ -235,10 +268,18 @@ iframe {
 
 /* ecran mediu */
 
-@media screen and (max-width:1200px) { 
+@media screen and (max-width:1200px) {
     body{
         --margine-pagina: 80px;
         --gap-pagina: 8px;
+    }
+
+    .tabel-scroll {
+        overflow-x: auto;
+    }
+
+    #tab-orar {
+        min-width: 700px;
     }
 
     #grid-pagina{
